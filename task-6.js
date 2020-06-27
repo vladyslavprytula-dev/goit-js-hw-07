@@ -1,7 +1,3 @@
-{
-  /* <input type="text" id="validation-input" data-length="6" placeholder="Введи 6 символов" /> */
-}
-
 const validationInputRef = document.querySelector('#validation-input');
 console.dir(validationInputRef);
 validationInputRef.addEventListener('focus', () => {

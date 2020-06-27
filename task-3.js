@@ -19,8 +19,9 @@ const images = [
 const createimgCard = image => {
   const liRef = document.createElement('li');
   const imgRef = document.createElement('img');
-  imgRef.setAttribute('url', image.url);
+  imgRef.setAttribute('src', image.url);
   imgRef.setAttribute('alt', image.alt);
+  imgRef.setAttribute('height', '200px');
   liRef.append(imgRef);
   return liRef;
 };
