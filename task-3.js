@@ -16,16 +16,28 @@ const images = [
   },
 ];
 
-const createimgCard = image => {
-  const liRef = document.createElement('li');
-  const imgRef = document.createElement('img');
-  imgRef.setAttribute('src', image.url);
-  imgRef.setAttribute('alt', image.alt);
-  imgRef.setAttribute('height', '200px');
-  liRef.append(imgRef);
-  return liRef;
-};
-
-const imgCard = images.map(image => createimgCard(image));
+// const createimgCard = image => {
+//   const liRef = document.createElement('li');
+//   const imgRef = document.createElement('img');
+//   imgRef.setAttribute('src', image.url);
+//   imgRef.setAttribute('alt', image.alt);
+//   imgRef.setAttribute('height', '200px');
+//   liRef.append(imgRef);
+//   return liRef;
+// };
+// const imgCard = images.map(image => createimgCard(image));
+// const galleryRef = document.querySelector('#gallery');
+// galleryRef.append(...imgCard);
 const galleryRef = document.querySelector('#gallery');
-galleryRef.append(...imgCard);
+const createImgCard = (url, alt) => {
+  const li = document.createElement('li');
+  li.insertAdjacentHTML('afterbegin', `<img src=${url}' alt=${alt} height=200px>`);
+  return li;
+};
+const addImgtoCard = images => {
+  return images.map(image => createImgCard(image.url, image.alt));
+};
+const addCardtoDomRef = (domRef, img) => {
+  domRef.append(...addImgtoCard(img));
+};
+addCardtoDomRef(galleryRef, images);

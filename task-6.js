@@ -1,5 +1,4 @@
 const validationInputRef = document.querySelector('#validation-input');
-console.dir(validationInputRef);
 validationInputRef.addEventListener('focus', () => {
   if (event.target.value.length == validationInputRef.dataset.length) {
     validationInputRef.classList.remove('invalid');

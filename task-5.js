@@ -5,4 +5,3 @@ inputRef.addEventListener('input', () => {
     nameOutputRef.textContent = inputRef.value;
   }
 });
-console.dir(inputRef);
